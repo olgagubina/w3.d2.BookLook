@@ -38,12 +38,12 @@
     <script src="script.js"> </script>
     <script id="book-template" type="text/x-handlebars-template">
         <div>
-          {{#each items}}
+          <!-- {{#each items}} -->
           <h1>{{ volumeInfo.title }}</h1><br>
           <p>{{ volumeInfo.description }}</p>
           <h3>Written by: {{ volumeInfo.authors }}</h3>
           <img src={{volumeInfo.imageLinks.thumbnail}}>
-          {{/each}}
+          <!-- {{/each}} -->
         </div>
       </script>
 </body>

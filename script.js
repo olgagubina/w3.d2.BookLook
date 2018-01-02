@@ -14,7 +14,8 @@ var fetch = function () {
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(textStatus);
       }
-    }); 
-  };
+  }); 
+  $('#ISBN').val("");
+};
 
 $(".search").on('click', fetch);
