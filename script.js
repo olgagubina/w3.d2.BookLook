@@ -1,7 +1,9 @@
+
 var fetch = function () {
-    $.ajax({
-      method: "GET",
-      url: 'https://www.googleapis.com/books/v1/volumes?q=isbn:0439023521',
+  var buildUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:'+$("#ISBN").val();
+  $.ajax({
+    method: "GET",
+    url: buildUrl,
       success: function(data) {
         var source = $("#book-template").html();
         var template = Handlebars.compile(source);
@@ -14,11 +16,5 @@ var fetch = function () {
       }
     }); 
   };
-
-
-  // data.items[0].volumeInfo.title
-  // data.items[0].volumeInfo.authors
-  // data.items[0].volumeInfo.description
-  // data.items[0].volumeInfo.imageLinks.thumbnail
 
 $(".search").on('click', fetch);
