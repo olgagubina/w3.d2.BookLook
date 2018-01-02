@@ -1,5 +1,5 @@
 var fetch = function () {
-  var buildUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:'+$("#ISBN").val();
+  var buildUrl = 'https://www.googleapis.com/books/v1/volumes?q=intitle:'+$("title").val();
   $.ajax({
     method: "GET",
     url: buildUrl,
@@ -14,6 +14,7 @@ var fetch = function () {
         console.log(textStatus);
       }
     }); 
+    $('#title').val("");
   };
 
 $(".search").on('click', fetch);
