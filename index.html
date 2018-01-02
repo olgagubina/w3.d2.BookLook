@@ -21,14 +21,14 @@
         </div>
     
         <form>
-            <h3>Search by ISBN</h3>
+            <h3>Search by title</h3>
     
             <div class="form-group">
-                <input type="text" id="title" placeholder="Title">
+                <input type="text" class="title" placeholder="Title">
             </div>
     
             <button class="btn btn-primary search" type="button">Search</button>
-        </form>
+        </form><br>
     
         </div>
     </div>
@@ -43,8 +43,9 @@
           <p>{{ volumeInfo.description }}</p>
           <h3>Written by: {{ volumeInfo.authors }}</h3>
           <img src={{volumeInfo.imageLinks.thumbnail}}>
+            <div class="page-header"></div>
           {{/each}}
-        </div>
+        </div><br>
       </script>
 </body>
 </html>
