@@ -1,11 +1,14 @@
+
+var source = $("#book-template").html();
+var template = Handlebars.compile(source);
+
 var fetch = function () {
-  var buildUrl = 'https://www.googleapis.com/books/v1/volumes?q=isbn:'+$("#ISBN").val();
+  console.log($(".title").val());
+  var buildUrl = 'https://www.googleapis.com/books/v1/volumes?q=intitle:' + $(".title").val();
   $.ajax({
     method: "GET",
     url: buildUrl,
       success: function(data) {
-        var source = $("#book-template").html();
-        var template = Handlebars.compile(source);
         var newHTML = template(data);
         $(".books").append(newHTML);
         console.log(data);
@@ -14,6 +17,7 @@ var fetch = function () {
         console.log(textStatus);
       }
     }); 
+    $(".title").val("");
   };
 
 $(".search").on('click', fetch);
